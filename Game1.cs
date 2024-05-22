@@ -101,7 +101,6 @@ namespace Summative_Animation_Assignment
 
             if (_screen == Screen.Intro)
             {
-                if (mouseState.LeftButton == ButtonState.Pressed && prevMouseState.LeftButton == ButtonState.Released)
                 {
                     _screen = Screen.MainScreen;
                 }
@@ -118,7 +117,6 @@ namespace Summative_Animation_Assignment
                         frame = 0;
                     }
                 }
-                if (keyboardState.IsKeyDown(Keys.Z) && prevKeyboardState.IsKeyUp(Keys.Z))
                 {
                     dialogue += 1;
                     if (dialogue == 1)
@@ -143,24 +141,13 @@ namespace Summative_Animation_Assignment
                     }
                     else if (dialogue == 6)
                     {
-                        explanation = "This is the main character for my final project.";
                     }
                     else if (dialogue == 7)
                     {
-                        explanation = "(Press M2.)";
-                        
-                    }
-                    
-                }
-
-                if (mouseState.RightButton == ButtonState.Pressed && dialogue == 7)
-                {
+                        {
                             _screen = Screen.EndScreen;
-                }
-            }
-            else if (_screen == Screen.EndScreen)
-            {
-
+                        }
+                    }
             }
 
             base.Update(gameTime);
